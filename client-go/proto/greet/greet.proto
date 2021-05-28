@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package github.com.sevendollar.grpc.greet;
+
+option go_package=".;greetpb";
+
+service GreetService {
+        rpc Ping(PingRequest) returns(PingResponse);
+        rpc Hello(HelloRequest) returns(HelloResponse);
+}
+
+message PingRequest {}
+
+message PingResponse {
+        // always return "pong"
+        string message = 1;
+}
+
+message HelloRequest {
+        string name = 1;
+}
+
+message HelloResponse {
+        string message = 1;
+}
+
