@@ -38,7 +38,7 @@ func main() {
 	log.Println("starting gRPC server...")
 	go func() {
 		// run gRPC server
-		log.Println("gRPC server is running...")
+		log.Printf("gRPC server is running on %s...", lis.Addr().String())
 		if err := srv.Serve(lis); err != nil {
 			log.Fatal(err)
 		}
